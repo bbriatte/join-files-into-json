@@ -1,0 +1,19 @@
+{
+  "name": "join-files-into-json",
+  "version": "1.0.0",
+  "description": "Join multiple content of files into a JSON output file",
+  "main": "index.js",
+  "bin": {
+    "join-files-into-json": "./bin/index.js"
+  },
+  "keywords": [
+    "json",
+    "multiple-files",
+    "cli"
+  ],
+  "author": "bbriatte",
+  "license": "BSD3-Clause",
+  "dependencies": {
+    "command-line-args": "^5.1.1"
+  }
+}
