@@ -9,14 +9,14 @@ const IncrementalVar = require('./incremental-var');
 class JoinFileContents {
 
     static async fromConfigFile(file) {
-        return JoinFileContents.usingConfig(JSON.parse(await readFile(file)))
+        return JoinFileContents.usingConfig(JSON.parse((await readFile(file)).toString()));
     }
 
     static async usingConfig(config) {
         let res = {};
-        if(config.merge === true) {
+        if(config.from !== undefined) {
             try {
-                res = JSON.parse(await readFile(config.output));
+                res = JSON.parse((await readFile(config.from)).toString());
             } catch(err) { }
         }
         await Promise.all(config.inputs.map(async (input) => {
